@@ -5,11 +5,10 @@ import Login from './app/login/Login'
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Login />
-        <Layout />
+      <div className="container" >
+          <Login />
       </div>
-      
+          
     );
   }
 }
