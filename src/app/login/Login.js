@@ -9,10 +9,10 @@ class Login extends Component {
                 <div className="hero-body">WELCOME</div>
             </section>
             <div className="columns  is-centered">
-                <div className="column is-half has-background-primary">
+                <div className="column is-half ">
                     <div className="field">
                         <p className="control has-icons-left has-icons-right">
-                        <input className="input" type="email" placeholder="Email"/>
+                        <input className="input is-hovered" type="email" placeholder="Email"/>
                         <span className="icon is-small is-left">
                             <i className="fas fa-envelope"></i>
                         </span>
@@ -23,7 +23,7 @@ class Login extends Component {
                     </div>
                     <div className="field">
                         <p className="control has-icons-left">
-                        <input className="input" type="password" placeholder="Password"/>
+                        <input className="input is-hovered" type="password" placeholder="Password"/>
                         <span className="icon is-small is-left">
                             <i className="fas fa-lock"></i>
                         </span>
