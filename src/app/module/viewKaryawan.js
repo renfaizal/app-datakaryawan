@@ -1,4 +1,5 @@
 import React from 'react';
+import { generateKeyPair } from 'crypto';
 
 class ViewKaryawan extends React.Component {
 
@@ -14,14 +15,11 @@ class ViewKaryawan extends React.Component {
 
   componentDidMount() {
     const apiUrl = 'http://localhost:1234/api/jabatan';
-    var bearer = 'Bearer ' +  'Aw4s_g4l4k';
-
+    var token = 'Aw4s_g4l4k';
+    var requestHeaders = {'Authorization':'Bearer '+ token};
     fetch(apiUrl, {
             method: 'get', 
-            headers: {
-            'Authorization': bearer,
-            'Content-Type': 'application/json'
-        }})
+            headers: requestHeaders})
       .then(res => res.json())
       .then(
         (result) => {
