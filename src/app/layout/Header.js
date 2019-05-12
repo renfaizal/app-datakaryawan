@@ -31,7 +31,7 @@ class Header extends React.Component {
                         marginRight: 15
                     }}
                 src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAU3AAAAJGE1MzYxNzYzLTE1NTUtNDEyYi04MzRjLTgzZjNkOGU0MGIzNg.jpg" width="30px" alt="" />
-                <span>AaronKlaser.com</span>
+                <span>Home</span>
             </NavLink>
           <button className="button navbar-burger" onClick={this.toggleNav}>
             <span></span>
@@ -41,53 +41,45 @@ class Header extends React.Component {
         </div>
         <div className={ this.state.isActive ? 'navbar-menu is-active' : 'navbar-menu'}>
           <div className="navbar-start">
-            <NavLink className="navbar-item" to="/blog" activeClassName="is-active" >
-                <span className="icon has-text-primary" style={{ marginRight: 5 }}>
-                    <i className="fas fa-code"></i>
-                </span>
-                Code Blog
-            </NavLink>
+          <NavLink className="navbar-item" to="/dataKaryawan" activeClassName="is-active">
             <a className="navbar-item">
-              <span className="icon" style={{ marginRight: 5 }}>
-                <i className="fab fa-lg fa-medium"></i>
-              </span>
-              Medium
+              Data Karyawan
             </a>
+          </NavLink>
+          <NavLink className="navbar-item" to="/dataPekerjaan" activeClassName="is-active">
+            <a className="navbar-item">
+              Data Pekerjaan
+            </a>
+          </NavLink>
+          <NavLink className="navbar-item" to="/dataDivisi" activeClassName="is-active">
+            <a className="navbar-item">
+              Data Divisi
+            </a>
+          </NavLink>
+          <NavLink className="navbar-item" to="/dataJabatan" activeClassName="is-active">
+            <a className="navbar-item">
+              Data Jabatan
+            </a>
+          </NavLink>  
+          </div>
+          <div className="navbar-end">
             <div className="navbar-item has-dropdown is-hoverable">
               <a className="navbar-link" >
-                Projects
+                My Account
               </a>
               <div className="navbar-dropdown">
                 <a className="navbar-item">
                   Overview
                 </a>
-                <hr className="navbar-divider" />
                 <a className="navbar-item">
                   This Site
                 </a>
+                <hr className="navbar-divider" />
                 <a className="navbar-item" >
-                  Angular The React Way
+                  Logout
                 </a>
               </div>
             </div>
-          </div>
-          <div className="navbar-end">
-            <a className="navbar-item" href="https://github.com/aaronklaser">
-              <span className="icon">
-                <i className="fab fa-lg fa-github"></i>
-              </span>
-            </a>
-            <a className="navbar-item" href="https://twitter.com/awklaser">
-              <span className="icon has-text-info" style={{ color: '#0084FF' }}>
-                <i className="fab fa-lg fa-twitter"></i>
-              </span>
-            </a>
-            <a className="navbar-item" href="http://resume.aaronklaser.com">
-              Resume
-              <span className="icon" style={{ color: '#0077B5', marginLeft: 5 }}>
-                <i className="fab fa-lg fa-linkedin"></i>
-              </span>
-            </a>
           </div>
         </div>
       </nav>

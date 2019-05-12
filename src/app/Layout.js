@@ -23,7 +23,7 @@ const Layout = ({ children }) => (
       ]}
     />
     <Header />
-    <Content>     
+    <Content>    
         <Router />
 	{/* {children()} */}
     </Content>

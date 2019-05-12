@@ -1,5 +1,14 @@
 import React from 'react'
+
+
 const Home = () => (
-  <p>This is the Home Page</p>
+<div className="columns">
+  <div className="column is-8 ">
+    <div className="container is-success">
+      <p>tes</p>
+    </div>
+  </div>
+  
+</div>  
 )
 export default Home
