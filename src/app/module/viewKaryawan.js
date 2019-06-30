@@ -1,74 +1,78 @@
 import React from 'react';
-import { generateKeyPair } from 'crypto';
+import axios from 'axios';
 
 class ViewKaryawan extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-
-      message: null,
-      jabatan: [],
-      status: {}
-    }
+      items: []
+    };
   }
 
   componentDidMount() {
-    const apiUrl = 'http://localhost:1234/api/jabatan';
-    var token = 'Aw4s_g4l4k';
-    var requestHeaders = {'Authorization':'Bearer '+ token};
-    fetch(apiUrl, {
-            method: 'get', 
-            headers: requestHeaders})
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            jabatan: result
-          });
-        },
-        (error) => {
-          this.setState({ error });
-        }
-      )
+    // const apiUrl = 'http://c457c302.ngrok.io/api/jabatan/';
+    // //var token = 'Aw4s_g4l4k';
+    // //var requestHeaders = {'Authorization':'Bearer '+ token};
+    // fetch(apiUrl)
+    //   .then(res => {
+    //     console.log(res.json())
+    //   })
+    //   .then(parsedJSON => parsedJSON.results.map(data => (
+    //     {
+    //       id: '${data.id}',
+    //       nama: '${data.nama}',
+    //     })
+    //   )
+    //   )
+    //   .then(items => this.setState({
+    //     items,
+    //     isLoaded: false
+    //   }))
+    //  // .catch(error => console.log('parsing data failed'),error)
+    axios.get('http://c457c302.ngrok.io/api/pegawai/')
+    .then((result)=> result.data)
+    .then((data)=>{
+      return this.setState({
+        items: data.data,
+        isLoaded: false
+      })
+    })
   }
 
   render() {
-    const { error, jabatan} = this.state;
+    const { items} = this.state;
 
-    if(error) {
-      return (
-        <div>Error: {error.message}</div>
-      )
-    } else {
       return(
         <div>
-          {this.state.status.message }
           
           <div className="table">
             <thead>
               <tr>
                 <th>#ID</th>
-                <th>Nama Jabatan</th>
+                <th>Nama Karyawan</th>
+                <th>Nama Alamat</th>
               </tr>
             </thead>
             <tbody>
-              {jabatan.map(jabatan => (
-                <tr key={jabatan.id}>
-                  <td>{jabatan.id}</td>
-                  <td>{jabatan.nama}</td>
-                  <td>
-                    {/* <button className="button" variant="info" onClick={() => this.props.editProduct(product.id)}>Edit</button>
-                    &nbsp;<button className="button" variant="danger" onClick={() => this.deleteProduct(product.id)}>Delete</button> */}
-                  </td>
-                </tr>
-              ))}
+            {
+              items.length > 0 ? items.map(item => {
+                const {id, nama, alamat} = item;
+                return(
+                  <tr key={id}>
+                    <td>{id}</td>
+                    <td>{nama}</td>
+                    <td>{alamat}</td>
+                  </tr>
+                );
+              }) : null
+            }  
             </tbody>
           </div>
         </div>
       )
     }
   }
-}
+
 
 export default ViewKaryawan;
