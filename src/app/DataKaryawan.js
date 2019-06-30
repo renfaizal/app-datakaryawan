@@ -1,11 +1,11 @@
 import React from 'react'
 import ViewKaryawan from './module/viewKaryawan'
+import AddKaryawan from './module/addKaryawan'
 
 const DataKaryawan = () => (
   <div className>
+    <AddKaryawan />
     <ViewKaryawan />
-    <p>This is the DATA KARYAWAN Page</p>
-
   </div>
   
 
