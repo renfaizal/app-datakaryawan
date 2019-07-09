@@ -9,18 +9,14 @@ class AddKaryawan extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-          id: '',
           nama: '',
           alamat: ''
         }
 
-        this.handleIdChange = this.handleIdChange.bind(this);
         this.handleNamaChange = this.handleNamaChange.bind(this);
         this.handleAlamatChange = this.handleAlamatChange.bind(this);
       }
-      handleIdChange (evt) {
-        this.setState({ id: evt.target.value });
-      }
+
       handleNamaChange (evt) {
         this.setState({ nama: evt.target.value });
       }
@@ -39,20 +35,37 @@ class AddKaryawan extends React.Component {
 
     onSubmit(e){      
         e.preventDefault();
-
+        // console.log(this.state.nama)
+        // console.log(this.state.alamat)
         const karyawan = {
-            id: this.state.name,
-            nama: this.state.age,
-            alamat: this.state.salary
+            // id: this.state.name,
+            nama: this.state.nama,
+            alamat: this.state.alamat,
+            username: 'ren',
+            password: '123',
+            email: 'test@gmail.com',
+            jabatan_id: '450613489735991297',
+            divisi_id: '450617489217224705'
         }
-    	axios.post('http://24a31190.ngrok.io/api/pegawai/tambah', karyawan)
-        .then(res => console.log(res.data));
-        
-        // this.setState({
-        //     id:'',
-        //     nama:'',
-        //     alamat:''
-        // });
+    	axios.post('http://53a2f038.ngrok.io/api/pegawai/tambah', karyawan)
+        .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+        // .then(res => console.log(res.data))
+        .then(res => console.log(karyawan))
+        // axios({method:'post', url: 'http://53a2f038.ngrok.io/api/pegawai/tambah', data:{karyawan}})
+        // .then(res => console.log(res.data))
+        this.setState({
+            // id:'',
+            nama:'',
+            alamat:''
+        })
+        // .catch(error =>{
+        //     console.log(error);
+        // })
     }      
     
     render(){
@@ -60,21 +73,15 @@ class AddKaryawan extends React.Component {
         return(
             <form onSubmit={this.onSubmit}>
                 <div className="field is-grouped">
-                <label className="label">ID</label>
-                    <div className="control">
-                        <input className="input" name="id" type="text" placeholder="ID Karyawan" onChange={this.handleIdChange}  />
-                    </div>
-                </div>
-                <div className="field is-grouped">
                 <label className="label">Nama</label>
                     <div className="control">
-                        <input className="input" name="nama" type="text" placeholder="Text input" onChange={this.handleNamaChange}/>
+                        <input className="input" name="nama" type="text" placeholder="Text input" value={this.state.nama} onChange={this.handleNamaChange}/>
                     </div>
                 </div>
                 <div className="field is-grouped">
                 <label className="label">Alamat</label>
                     <div className="control">
-                        <input className="input" name="alamat" type="text" placeholder="Text input" onChange={this.handleAlamatChange}/>
+                        <input className="input" name="alamat" type="text" placeholder="Text input" value={this.state.alamat} onChange={this.handleAlamatChange}/>
                     </div>
                 </div>
                 <div className="field">
