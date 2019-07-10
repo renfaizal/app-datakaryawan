@@ -30,7 +30,7 @@ class ViewKaryawan extends React.Component {
     //     isLoaded: false
     //   }))
     //  // .catch(error => console.log('parsing data failed'),error)
-    axios.get('http://53a2f038.ngrok.io/api/pegawai/')
+    axios.get('http://20a09b7c.ngrok.io/api/pegawai/')
     .then((result)=> result.data)
     .then((data)=>{
       return this.setState({
@@ -51,7 +51,7 @@ class ViewKaryawan extends React.Component {
               <tr>
                 <th>#ID</th>
                 <th>Nama Karyawan</th>
-                <th>Nama Alamat</th>
+                <th>Alamat</th>
               </tr>
             </thead>
             <tbody>

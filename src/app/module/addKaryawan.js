@@ -37,7 +37,7 @@ class AddKaryawan extends React.Component {
         e.preventDefault();
         // console.log(this.state.nama)
         // console.log(this.state.alamat)
-        const karyawan = {
+        const pegawai = {
             // id: this.state.name,
             nama: this.state.nama,
             alamat: this.state.alamat,
@@ -47,17 +47,19 @@ class AddKaryawan extends React.Component {
             jabatan_id: '450613489735991297',
             divisi_id: '450617489217224705'
         }
-    	axios.post('http://53a2f038.ngrok.io/api/pegawai/tambah', karyawan)
-        .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
+        console.log(pegawai);
+        const headers = {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+    	axios.post('http://20a09b7c.ngrok.io/api/pegawai/tambah', pegawai, {headers:headers} )
+         .then(function (response) {
+           console.log(response);
+           })
+           .catch(function (error) {
             console.log(error);
-          })
+           })
         // .then(res => console.log(res.data))
-        .then(res => console.log(karyawan))
+        // .then(res => console.log(karyawan))
         // axios({method:'post', url: 'http://53a2f038.ngrok.io/api/pegawai/tambah', data:{karyawan}})
-        // .then(res => console.log(res.data))
+        //  .then(res => console.log(res.data))
         this.setState({
             // id:'',
             nama:'',
