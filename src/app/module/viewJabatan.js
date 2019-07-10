@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class ViewKaryawan extends React.Component {
+class ViewJabatan extends React.Component {
 
   constructor(props) {
     super(props);
@@ -30,7 +30,7 @@ class ViewKaryawan extends React.Component {
     //     isLoaded: false
     //   }))
     //  // .catch(error => console.log('parsing data failed'),error)
-    axios.get('http://20a09b7c.ngrok.io/api/pegawai/')
+    axios.get('http://53a2f038.ngrok.io/api/jabatan/')
     .then((result)=> result.data)
     .then((data)=>{
       return this.setState({
@@ -50,19 +50,17 @@ class ViewKaryawan extends React.Component {
             <thead>
               <tr>
                 <th>#ID</th>
-                <th>Nama Karyawan</th>
-                <th>Alamat</th>
+                <th>Jabatan</th>
               </tr>
             </thead>
             <tbody>
             {
               items.length > 0 ? items.map(item => {
-                const {id, nama, alamat} = item;
+                const {id, jabatan} = item;
                 return(
                   <tr key={id}>
                     <td>{id}</td>
-                    <td>{nama}</td>
-                    <td>{alamat}</td>
+                    <td>{jabatan}</td>
                   </tr>
                 );
               }) : null
@@ -75,4 +73,4 @@ class ViewKaryawan extends React.Component {
   }
 
 
-export default ViewKaryawan;
+export default ViewJabatan;
