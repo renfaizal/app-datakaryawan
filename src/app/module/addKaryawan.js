@@ -56,6 +56,7 @@ class AddKaryawan extends React.Component {
            .catch(function (error) {
             console.log(error);
            })
+           .then(res => console.log(pegawai))
         // .then(res => console.log(res.data))
         // .then(res => console.log(karyawan))
         // axios({method:'post', url: 'http://53a2f038.ngrok.io/api/pegawai/tambah', data:{karyawan}})
