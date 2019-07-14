@@ -1,6 +1,9 @@
 import React from 'react'
+import ViewDivisi from './module/viewDivisi'
 
 const DataDiv = () => (
-  <p>This is the DATA Divisi Page</p>
+  <div className>
+    <ViewDivisi />
+  </div>
 )
 export default DataDiv

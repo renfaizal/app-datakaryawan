@@ -10,7 +10,7 @@ import Footer from './layout/Footer'
 const Layout = ({ children }) => (
   <Site>
     <Helmet
-      title="Aaron is Awesome"
+      title="DATA KARYAWAN"
       meta={[
         { name: 'description', content: 'Aaron Klaser\'s personal wedsite, portfolio, blog, tutorials, and just cool $h!t' },
         { name: 'keywords', content: 'resume, blog, porfolio, tutorials, aaron klaser' },

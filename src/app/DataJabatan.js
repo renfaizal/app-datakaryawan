@@ -1,6 +1,13 @@
 import React from 'react'
+import ViewJabatan from './module/viewJabatan'
 
 const DataJabatan = () => (
-  <p>This is the DATA JABATAN Page</p>
+  <center>
+    <b>DATA JABATAN</b>
+    <br / >
+    <div className>
+      <ViewJabatan />
+    </div>
+  </center>
 )
 export default DataJabatan

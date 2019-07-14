@@ -30,7 +30,7 @@ class ViewKaryawan extends React.Component {
     //     isLoaded: false
     //   }))
     //  // .catch(error => console.log('parsing data failed'),error)
-    axios.get('http://20a09b7c.ngrok.io/api/pegawai/')
+    axios.get('http://localhost:1234/api/pegawai/')
     .then((result)=> result.data)
     .then((data)=>{
       return this.setState({

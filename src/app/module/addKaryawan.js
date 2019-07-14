@@ -49,7 +49,7 @@ class AddKaryawan extends React.Component {
         }
         console.log(pegawai);
         const headers = {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
-    	axios.post('http://20a09b7c.ngrok.io/api/pegawai/tambah', pegawai, {headers:headers} )
+    	axios.post('http://localhost:1234/api/pegawai/tambah', pegawai, {headers:headers} )
          .then(function (response) {
            console.log(response);
            })
