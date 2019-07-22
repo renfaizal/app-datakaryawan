@@ -1,6 +1,9 @@
 import React from 'react'
+import ViewPekarjaan from './module/viewPekerjaan'
 
 const DataPekerjaan = () => (
-  <p>This is the DATA PEKERJAAN Page</p>
+  <div className>
+    <ViewPekarjaan />
+  </div>
 )
 export default DataPekerjaan
