@@ -30,7 +30,7 @@ class ViewPekerjaan extends React.Component {
     //     isLoaded: false
     //   }))
     //  // .catch(error => console.log('parsing data failed'),error)
-    axios.get('http://localhost:1234/api/pekerjaan/')
+    axios.get('http://e582704b.ngrok.io/api/pekerjaan/')
     .then((result)=> result.data)
     .then((data)=>{
       return this.setState({
@@ -58,7 +58,7 @@ class ViewPekerjaan extends React.Component {
             <tbody>
             {
               items.length > 0 ? items.map(item => {
-                const {id, nama, pj, anggota_tim, deadline} = item;
+                const {id, nama, pj, /*anggota_tim,*/ deadline} = item;
                 return(
                   <tr key={id}>
                     <td>{id}</td>

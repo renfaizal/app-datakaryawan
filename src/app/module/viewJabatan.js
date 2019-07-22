@@ -30,7 +30,8 @@ class ViewJabatan extends React.Component {
     //     isLoaded: false
     //   }))
     //  // .catch(error => console.log('parsing data failed'),error)
-    axios.get('http://localhost:1234/api/jabatan/')
+    axios.get('http://e582704b.ngrok.io/api/jabatan/')
+
     .then((result)=> result.data)
     .then((data)=>{
       return this.setState({
