@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-class ViewJabatan extends React.Component {
+class ViewDivisi extends React.Component {
 
   constructor(props) {
     super(props);
@@ -30,8 +30,7 @@ class ViewJabatan extends React.Component {
     //     isLoaded: false
     //   }))
     //  // .catch(error => console.log('parsing data failed'),error)
-    axios.get('http://e582704b.ngrok.io/api/jabatan/')
-
+    axios.get('http://e582704b.ngrok.io/api/divisi/')
     .then((result)=> result.data)
     .then((data)=>{
       return this.setState({
@@ -51,7 +50,7 @@ class ViewJabatan extends React.Component {
             <thead>
               <tr>
                 <th>#ID</th>
-                <th>Jabatan</th>
+                <th>Nama Divisi</th>
               </tr>
             </thead>
             <tbody>
@@ -74,4 +73,4 @@ class ViewJabatan extends React.Component {
   }
 
 
-export default ViewJabatan;
+export default ViewDivisi;
